@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="DSS2122">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/DSS2122.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

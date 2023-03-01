@@ -1,0 +1,77 @@
+use mydb;
+
+
+CREATE TABLE IF NOT EXISTS `mydb`.`Utilizador` (
+  `username` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `conta` INT NOT NULL,
+  UNIQUE INDEX `username_UNIQUE` (`username` ASC),
+  PRIMARY KEY (`username`),
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC))
+ENGINE = InnoDB
+
+Drop Table Utilizador;
+
+drop table Configuracao;
+CREATE TABLE IF NOT EXISTS `mydb`.`Configuracao` (
+	`ref` INT NOT NULL,
+  `custo` DECIMAL(10,2) NOT NULL,
+  `tipo` VARCHAR(45) NOT NULL,
+  `pintura` VARCHAR(45) NOT NULL,
+  `jantesPneus` VARCHAR(45) NOT NULL,
+  `motor` VARCHAR(45) NOT NULL,
+  `id_configura` INT NOT NULL,
+  `stock` INT NOT NULL,
+  PRIMARY KEY (`id_configura`),
+  UNIQUE INDEX `id_configura_UNIQUE` (`id_configura` ASC))
+ENGINE = InnoDB
+
+drop table configuracaoExt;
+CREATE TABLE IF NOT EXISTS `mydb`.`configuracaoExt` (
+	`ref` INT NOT NULL,
+    `custo` DECIMAL(10,2) NOT NULL,
+  `tipo` VARCHAR(45) NOT NULL,
+  `tectodeAbrir` VARCHAR(45) NOT NULL,
+  `vidrosEscurecidos` VARCHAR(45) NOT NULL,
+  `parachoques` VARCHAR(45) NOT NULL,
+  `id_configuraExt` INT NOT NULL,
+  `stock` INT NOT NULL,
+  PRIMARY KEY (`id_configuraExt`),
+  UNIQUE INDEX `id_configuraExt_UNIQUE` (`id_configuraExt` ASC))
+ENGINE = InnoDB
+
+drop table configuracaoInt;
+CREATE TABLE IF NOT EXISTS `mydb`.`configuracaoint` (
+	`ref` INT NOT NULL,
+    `custo` DECIMAL(10,2) NOT NULL,
+  `tipo` VARCHAR(45) NOT NULL,
+  `estofos` VARCHAR(45) NOT NULL,
+  `luzes` VARCHAR(45) NOT NULL,
+  `arCondicionado` VARCHAR(45) NOT NULL,
+  `id_configuraInt` INT NOT NULL,
+  `stock` INT NOT NULL,
+  PRIMARY KEY (`id_configuraInt`),
+  UNIQUE INDEX `id_configuraInt_UNIQUE` (`id_configuraInt` ASC))
+ENGINE = InnoDB
+
+drop table PacoteConfort;
+CREATE TABLE IF NOT EXISTS `mydb`.`PacoteConfort` (
+	`ref` INT NOT NULL,
+    `custo` DECIMAL(10,2) NOT NULL,
+    `tipo` VARCHAR(45) NOT NULL,
+  `bancoElectrico` VARCHAR(45) NOT NULL,
+  `arCondicionado4Z` VARCHAR(45) NOT NULL,
+  `luzesInt` VARCHAR(45) NOT NULL,
+  `espelho` VARCHAR(45) NOT NULL,
+  `id_Confort` INT NOT NULL,
+  `stock` INT NOT NULL,
+  PRIMARY KEY (`id_Confort`),
+  UNIQUE INDEX `id_Confort_UNIQUE` (`id_Confort` ASC))
+ENGINE = InnoDB
+
+select * from configuracaoExt;
+select * from configuracaoInt;
+select * from Configuracao;
+select * from PacoteConfort;
+
+
